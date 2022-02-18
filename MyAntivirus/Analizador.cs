@@ -7,10 +7,10 @@ namespace MyAntivirus
 {
     class Analizador
     {
-        private string archivo; //string que lleva al path del archivo
+        private FileInfo archivo;
         private byte[] bytesArchivo; //vector que contiene los bytes del archivo
 
-        public Analizador(string archivo, byte[] bytesArchivo)
+        public Analizador(FileInfo archivo, byte[] bytesArchivo)
         {
             this.archivo = archivo;
             this.bytesArchivo = bytesArchivo;
@@ -29,5 +29,14 @@ namespace MyAntivirus
             Virus covid19 = new Virus("covid19", new byte[] { 30, 25, 20, 19 });
 
         }
+
+        public byte[] leerArchivo()
+        {
+            string ruta = this.archivo.FullName;
+            bytesArchivo = File.ReadAllBytes(ruta);
+            return bytesArchivo;
+            throw new IOException();
+        }
+
     }
 }
