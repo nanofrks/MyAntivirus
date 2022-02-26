@@ -29,21 +29,22 @@ namespace MyAntivirus
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            this.lbl_ruta = new System.Windows.Forms.Label();
             this.btn_buscar = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lbl_secuencia = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.txt_secuencia = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // label1
+            // lbl_ruta
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(160, 103);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 15);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "label1";
+            this.lbl_ruta.AutoSize = true;
+            this.lbl_ruta.Location = new System.Drawing.Point(160, 103);
+            this.lbl_ruta.Name = "lbl_ruta";
+            this.lbl_ruta.Size = new System.Drawing.Size(38, 15);
+            this.lbl_ruta.TabIndex = 0;
+            this.lbl_ruta.Text = "label1";
             // 
             // btn_buscar
             // 
@@ -55,14 +56,14 @@ namespace MyAntivirus
             this.btn_buscar.UseVisualStyleBackColor = true;
             this.btn_buscar.Click += new System.EventHandler(this.button1_Click);
             // 
-            // label2
+            // lbl_secuencia
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(160, 187);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(38, 15);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "label2";
+            this.lbl_secuencia.AutoSize = true;
+            this.lbl_secuencia.Location = new System.Drawing.Point(160, 187);
+            this.lbl_secuencia.Name = "lbl_secuencia";
+            this.lbl_secuencia.Size = new System.Drawing.Size(38, 15);
+            this.lbl_secuencia.TabIndex = 2;
+            this.lbl_secuencia.Text = "label2";
             // 
             // button2
             // 
@@ -82,16 +83,28 @@ namespace MyAntivirus
             this.label3.TabIndex = 4;
             this.label3.Text = "Nano antivirus";
             // 
+            // txt_secuencia
+            // 
+            this.txt_secuencia.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txt_secuencia.Location = new System.Drawing.Point(151, 252);
+            this.txt_secuencia.Multiline = true;
+            this.txt_secuencia.Name = "txt_secuencia";
+            this.txt_secuencia.ReadOnly = true;
+            this.txt_secuencia.Size = new System.Drawing.Size(540, 161);
+            this.txt_secuencia.TabIndex = 5;
+            this.txt_secuencia.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.txt_secuencia);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lbl_secuencia);
             this.Controls.Add(this.btn_buscar);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lbl_ruta);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -101,11 +114,12 @@ namespace MyAntivirus
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbl_ruta;
         private System.Windows.Forms.Button btn_buscar;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lbl_secuencia;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txt_secuencia;
     }
 }
 

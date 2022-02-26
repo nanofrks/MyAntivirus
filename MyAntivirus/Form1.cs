@@ -14,6 +14,8 @@ namespace MyAntivirus
 {
     public partial class Form1 : Form
     {
+        Analizador analizador;
+
         public Form1()
         {
             InitializeComponent();
@@ -25,12 +27,14 @@ namespace MyAntivirus
             explorador.ShowDialog(this);
             FileInfo archivo = new FileInfo(explorador.FileName);
             byte[] bytesArchivo = null;
-            Analizador analizador = new Analizador(archivo, bytesArchivo);
+            analizador = new Analizador(archivo);
 
             try
             {
                 //lectura de bytes seleccionados por el usuario
                 bytesArchivo = analizador.leerArchivo();
+                lbl_ruta.Text = archivo.FullName;
+
             } catch(IOException ex)
             {
              //logger que no sé poner (preguntarle al profe)
@@ -42,6 +46,11 @@ namespace MyAntivirus
                 cadena += bytesArchivo[i] + " ";
             }
             
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
