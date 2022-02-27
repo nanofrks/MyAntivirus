@@ -1,7 +1,7 @@
 ﻿
 namespace MyAntivirus
 {
-    partial class Form1
+    partial class frm_antivirus
     {
         /// <summary>
         ///  Required designer variable.
@@ -29,29 +29,30 @@ namespace MyAntivirus
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_antivirus));
             this.lbl_ruta = new System.Windows.Forms.Label();
             this.btn_buscar = new System.Windows.Forms.Button();
             this.lbl_res = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.txt_secuencia = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lbl_ruta
             // 
             this.lbl_ruta.AutoSize = true;
-            this.lbl_ruta.Location = new System.Drawing.Point(99, 112);
+            this.lbl_ruta.Location = new System.Drawing.Point(85, 135);
             this.lbl_ruta.Name = "lbl_ruta";
-            this.lbl_ruta.Size = new System.Drawing.Size(25, 15);
+            this.lbl_ruta.Size = new System.Drawing.Size(0, 15);
             this.lbl_ruta.TabIndex = 0;
-            this.lbl_ruta.Text = "aaa";
+            this.lbl_ruta.Click += new System.EventHandler(this.lbl_ruta_Click);
             // 
             // btn_buscar
             // 
             this.btn_buscar.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btn_buscar.Font = new System.Drawing.Font("Crystal Radio Kit", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.btn_buscar.Location = new System.Drawing.Point(508, 80);
+            this.btn_buscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.btn_buscar.Location = new System.Drawing.Point(622, 80);
             this.btn_buscar.Name = "btn_buscar";
             this.btn_buscar.Size = new System.Drawing.Size(166, 70);
             this.btn_buscar.TabIndex = 1;
@@ -62,7 +63,7 @@ namespace MyAntivirus
             // lbl_res
             // 
             this.lbl_res.AutoSize = true;
-            this.lbl_res.Location = new System.Drawing.Point(645, 331);
+            this.lbl_res.Location = new System.Drawing.Point(508, 360);
             this.lbl_res.Name = "lbl_res";
             this.lbl_res.Size = new System.Drawing.Size(38, 15);
             this.lbl_res.TabIndex = 2;
@@ -72,8 +73,8 @@ namespace MyAntivirus
             // button2
             // 
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.button2.Font = new System.Drawing.Font("Crystal Radio Kit", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button2.Location = new System.Drawing.Point(508, 165);
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button2.Location = new System.Drawing.Point(622, 165);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(166, 70);
             this.button2.TabIndex = 3;
@@ -84,10 +85,10 @@ namespace MyAntivirus
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Japanese 2020", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(264, 30);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(301, 32);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(246, 24);
+            this.label3.Size = new System.Drawing.Size(202, 33);
             this.label3.TabIndex = 4;
             this.label3.Text = "Nano antivirus";
             this.label3.Click += new System.EventHandler(this.label3_Click);
@@ -106,7 +107,16 @@ namespace MyAntivirus
             this.txt_secuencia.TabIndex = 5;
             this.txt_secuencia.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // Form1
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label1.Location = new System.Drawing.Point(70, 124);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(531, 37);
+            this.label1.TabIndex = 6;
+            // 
+            // frm_antivirus
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -118,9 +128,11 @@ namespace MyAntivirus
             this.Controls.Add(this.lbl_res);
             this.Controls.Add(this.btn_buscar);
             this.Controls.Add(this.lbl_ruta);
+            this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Form1";
+            this.MinimizeBox = false;
+            this.Name = "frm_antivirus";
             this.Text = "Antivirus";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -135,6 +147,7 @@ namespace MyAntivirus
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txt_secuencia;
+        private System.Windows.Forms.Label label1;
     }
 }
 

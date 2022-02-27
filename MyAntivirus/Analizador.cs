@@ -11,9 +11,9 @@ namespace MyAntivirus
         private byte[] bytesArchivo = null; //vector que contiene los bytes del archivo
         List<Virus> listaVirus = new List<Virus>(5);
 
-        List<byte>ContVirus=new List<byte>(5);
+        private byte cont_usama = 0, cont_amtrax = 0, cont_ebola = 0, cont_ah1n1 = 0, cont_covid19 = 0;
 
-        public byte[] BytesArchivo { get => bytesArchivo; private set => bytesArchivo = value; }
+        public byte[] BytesArchivo { get => bytesArchivo; set => bytesArchivo = value; }
 
         public Analizador()
         {
@@ -26,7 +26,7 @@ namespace MyAntivirus
         public void cargarVirus()
         {
 
-            Virus usama = new Virus("usama", new byte[] { 15, 30, 15, 49 });
+            Virus usama = new Virus("usama", new byte[] { 52, 50, 52, 50 }); 
             Virus amtrax = new Virus("amtrax",new byte[] { 72, 72, 15, 29 });
             Virus ebola = new Virus("ebola", new byte[] { 29, 32, 53, 29 });
             Virus ah1n1 = new Virus("ah1n1", new byte[] { 72, 32, 32, 20 });
@@ -59,8 +59,7 @@ namespace MyAntivirus
                     && BytesArchivo[i+2] == listaVirus[0].getSecuenciaVirus()[2]
                     && BytesArchivo[i + 3] == listaVirus[0].getSecuenciaVirus()[3])
                 {
-                    Console.WriteLine("encontrado USAMA");
-                    ContVirus[0]++;
+                    cont_usama++;
                 }
 
                 //Detectar "AMTRAX"
@@ -69,8 +68,7 @@ namespace MyAntivirus
                     && BytesArchivo[i + 2] == listaVirus[1].getSecuenciaVirus()[2]
                     && BytesArchivo[i + 3] == listaVirus[1].getSecuenciaVirus()[3])
                 {
-                    Console.WriteLine("encontrado AMTRAX");
-                    ContVirus[1]++;
+                    cont_amtrax++;
                 }
 
                 //Detectar "éBola"
@@ -79,8 +77,7 @@ namespace MyAntivirus
                     && BytesArchivo[i + 2] == listaVirus[2].getSecuenciaVirus()[2]
                     && BytesArchivo[i + 3] == listaVirus[2].getSecuenciaVirus()[3])
                 {
-                    Console.WriteLine("encontrado éBola");
-                    ContVirus[2]++;
+                    cont_ebola++;
                 }
 
                 //Detectar "Ah1N1"
@@ -89,8 +86,7 @@ namespace MyAntivirus
                     && BytesArchivo[i + 2] == listaVirus[3].getSecuenciaVirus()[2]
                     && BytesArchivo[i + 3] == listaVirus[3].getSecuenciaVirus()[3])
                 {
-                    Console.WriteLine("encontrado Ah1N1");
-                    ContVirus[3]++;
+                    cont_ah1n1++;
                 }
 
                 //Detectar "Covid19"
@@ -99,8 +95,7 @@ namespace MyAntivirus
                     && BytesArchivo[i + 2] == listaVirus[4].getSecuenciaVirus()[2]
                     && BytesArchivo[i + 3] == listaVirus[4].getSecuenciaVirus()[3])
                 {
-                    Console.WriteLine("encontrado Covid19");
-                    ContVirus[4]++;
+                    cont_covid19++;
                 }
 
             }
@@ -114,33 +109,33 @@ namespace MyAntivirus
         {
             string msg="";
 
-            if (ContVirus[0]>=1||ContVirus[1]>= 1||ContVirus[2]>= 1||ContVirus[3] >= 1|| ContVirus[4] >= 1)
+            if (cont_usama>=1||cont_amtrax>= 1||cont_ebola>= 1||cont_ah1n1 >= 1|| cont_covid19 >= 1)
             {
                 msg = "Encontrado:\n";
 
-                if (ContVirus[0] >= 1)
+                if (cont_usama >= 1)
                 {
-                    msg += ContVirus[0]+" Secuencias de Usama\n";
+                    msg += cont_usama + " Secuencias de Usama\n";
                 }
 
-                if (ContVirus[1] >= 1)
+                if (cont_amtrax >= 1)
                 {
-                    msg += ContVirus[1]+" Secuencias de Amtrax\n";
+                    msg += cont_amtrax + " Secuencias de Amtrax\n";
                 }
 
-                if (ContVirus[2] >= 1)
+                if (cont_ebola >= 1)
                 {
-                    msg += ContVirus[2]+" Secuencias de éBola\n";
+                    msg += cont_ebola +" Secuencias de éBola\n";
                 }
 
-                if (ContVirus[3] >= 1)
+                if (cont_ah1n1 >= 1)
                 {
-                    msg += ContVirus[3]+" Secuencias de Ah1N1\n";
+                    msg += cont_ah1n1 + " Secuencias de Ah1N1\n";
                 }
 
-                if (ContVirus[3] >= 1)
+                if (cont_covid19 >= 1)
                 {
-                    msg += ContVirus[4]+" Secuencias de Covid19\n";
+                    msg += cont_covid19 + " Secuencias de Covid19\n";
                 }
             }
             else
@@ -148,6 +143,11 @@ namespace MyAntivirus
                 msg = "No se encontró ninguna secuencia de virus";
             }
             return msg;
+        }
+
+        public void reset()
+        {
+            cont_usama = 0;cont_amtrax = 0;cont_ebola = 0;cont_ah1n1 = 0;cont_covid19 = 0;
         }
 
     }
