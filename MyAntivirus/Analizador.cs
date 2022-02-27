@@ -40,7 +40,7 @@ namespace MyAntivirus
 
         public byte[] leerArchivo()
         {
-            string ruta = this.archivo.FullName;
+            string ruta = archivo.FullName;
             bytesArchivo = File.ReadAllBytes(ruta);
             return bytesArchivo;
             throw new IOException();
@@ -50,7 +50,6 @@ namespace MyAntivirus
         {
             for (int i = 0; i < bytesArchivo.Length - 3; i++)
             {
-                //q0
                 //Detectar "USAMA"
                 if(bytesArchivo[i] == listaVirus[0].getSecuenciaVirus()[0] 
                     && bytesArchivo[i+1] == listaVirus[0].getSecuenciaVirus()[1]
@@ -58,6 +57,15 @@ namespace MyAntivirus
                     && bytesArchivo[i + 3] == listaVirus[0].getSecuenciaVirus()[3])
                 {
                     Console.WriteLine("encontrado USAMA");
+                }
+
+                //Detectar "AMTRAX"
+                if (bytesArchivo[i] == listaVirus[1].getSecuenciaVirus()[0]
+                    && bytesArchivo[i + 1] == listaVirus[1].getSecuenciaVirus()[1]
+                    && bytesArchivo[i + 2] == listaVirus[1].getSecuenciaVirus()[2]
+                    && bytesArchivo[i + 3] == listaVirus[1].getSecuenciaVirus()[3])
+                {
+                    Console.WriteLine("encontrado AMTRAX");
                 }
 
             }
