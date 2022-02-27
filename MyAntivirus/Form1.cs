@@ -24,35 +24,43 @@ namespace MyAntivirus
         {
             OpenFileDialog explorador = new OpenFileDialog();
             explorador.ShowDialog(this);
+
             FileInfo archivo = new FileInfo(explorador.FileName);
-            byte[] bytesArchivo = null;
-            Analizador analizador = new Analizador(archivo);
+            lbl_ruta.Text = archivo.FullName;
+
+            Analizador analizador = new Analizador();
             analizador.cargarVirus();
+
+            string cadena = "";
 
             try
             {
                 //lectura de bytes seleccionados por el usuario
-                bytesArchivo = analizador.leerArchivo();
-                lbl_ruta.Text = archivo.FullName;
+                byte[] bytesArchivo = analizador.leerArchivo(archivo);
 
-            } catch(IOException ex)
+                for (int i = 0; i < bytesArchivo.Length; i++)
+                {
+                    cadena += bytesArchivo[i] + " ";
+                }
+
+                txt_secuencia.Text = cadena;
+
+
+
+            } catch (IOException ex)
             {
                 lbl_res.Text = ex.Message;
             }
 
-            string cadena = "";
-            for(int i = 0; i< bytesArchivo.Length; i++)
-            {
-                cadena += bytesArchivo[i] + " ";
-            }
-            if (cadena == "")
-            {
-                txt_secuencia.Text = bytesArchivo.Length.ToString();
-            }
 
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void progressBar1_Click(object sender, EventArgs e)
         {
 
         }

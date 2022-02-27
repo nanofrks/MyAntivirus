@@ -85,11 +85,13 @@ namespace MyAntivirus
             // 
             // txt_secuencia
             // 
+            this.txt_secuencia.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_secuencia.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txt_secuencia.Location = new System.Drawing.Point(151, 252);
             this.txt_secuencia.Multiline = true;
             this.txt_secuencia.Name = "txt_secuencia";
             this.txt_secuencia.ReadOnly = true;
+            this.txt_secuencia.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txt_secuencia.Size = new System.Drawing.Size(540, 161);
             this.txt_secuencia.TabIndex = 5;
             this.txt_secuencia.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
