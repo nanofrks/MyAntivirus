@@ -64,5 +64,30 @@ namespace MyAntivirus
         {
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Analizador analizador = new Analizador();
+
+            if (analizador.BytesArchivo == null)
+            {
+                lbl_res.Text = "Debe seleccionar un archivo para poder analizarlo";
+            }
+            else
+            {
+                analizador.detectorVirus();
+                lbl_res.Text = analizador.Txt_virus();
+            }
+        }
+
+        private void lbl_res_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
