@@ -26,7 +26,7 @@ namespace MyAntivirus
         public void cargarVirus()
         {
 
-            Virus usama = new Virus("usama", new byte[] { 52, 50, 52, 50 }); 
+            Virus usama = new Virus("usama", new byte[] { 15, 30, 15, 49 }); 
             Virus amtrax = new Virus("amtrax",new byte[] { 72, 72, 15, 29 });
             Virus ebola = new Virus("ebola", new byte[] { 29, 32, 53, 29 });
             Virus ah1n1 = new Virus("ah1n1", new byte[] { 72, 32, 32, 20 });
